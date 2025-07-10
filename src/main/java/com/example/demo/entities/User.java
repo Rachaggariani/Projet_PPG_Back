@@ -58,7 +58,9 @@ public class User {
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Roles> roles = new HashSet<>();
 
-	
+	@Enumerated(EnumType.STRING)
+    private Role role;
+
 	public Long getId() {
 		return id;
 	}
@@ -107,5 +109,11 @@ public class User {
 		this.phoneNumber = phoneNumber;
 	}
 	
+	public Role getRole() {
+        return role;
+    }
 
+    public void setRole(Role role) {
+        this.role = role;
+    }
 }
