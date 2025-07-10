@@ -34,4 +34,14 @@ public class UserServiceImpl  implements UserService{
 
 	}
 
+@Override
+public List<User> getUsersByRoles(String role) {
+    try {
+        Role enumRole = Role.valueOf(role.toUpperCase()); // assuming all enums are uppercase
+        return userRepository.findByRole(enumRole);
+    } catch (IllegalArgumentException e) {
+        throw new RuntimeException("Invalid role: " + role);
+    }
+}
+
 }
