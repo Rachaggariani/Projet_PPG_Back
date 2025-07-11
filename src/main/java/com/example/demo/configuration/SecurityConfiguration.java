@@ -49,7 +49,7 @@ public class SecurityConfiguration {
 	        CorsConfiguration configuration = new CorsConfiguration();
 	        
 	        //configuration.setAllowedOrigins(Arrays.asList("http://jenkins.sip-academy.com:8070")); // URL Angular exacte
-			configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+			configuration.setAllowedOrigins(Arrays.asList("http://127.0.0.1","http://localhost:4200"));
 	        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 	        configuration.setAllowedHeaders(Arrays.asList("*"));
 	        configuration.setAllowCredentials(true);
